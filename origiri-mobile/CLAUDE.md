@@ -1,0 +1,1 @@
+../origiri/CLAUDE.md

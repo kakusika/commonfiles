@@ -1,0 +1,40 @@
+# -----------------------------------------------------------------------
+# Files ignored by Git.
+#
+# Keep project-specific ignore rules in the top section.
+# -----------------------------------------------------------------------
+
+#= Project-specific
+
+# Android: `build/` below already covers Gradle's own output dirs.
+.gradle/
+local.properties
+apps/android/android/.gradle/
+apps/android/android/local.properties
+apps/android/android/app/src/main/jniLibs/
+app/android/.gradle/
+app/android/local.properties
+app/android/app/src/main/jniLibs/
+*.keystore
+*.apk
+*.aab
+
+# -----------------------------------------------------------------------
+# Shared ignore rules
+# -----------------------------------------------------------------------
+
+#= Build
+build/
+dist/
+package/
+result
+result-*
+target/
+
+#= Develop
+.direnv/
+.claude/
+
+#= System
+.DS_Store
+Thumbs.db
