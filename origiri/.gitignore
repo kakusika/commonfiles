@@ -1,0 +1,48 @@
+# -----------------------------------------------------------------------
+# Files ignored by Git.
+#
+# Keep project-specific ignore rules in the top section.
+# -----------------------------------------------------------------------
+
+#= Project-specific
+
+# Android (apps/android/android/): `build/` below already covers Gradle's own
+# output dirs.
+apps/android/android/.gradle/
+apps/android/android/local.properties
+apps/android/android/app/src/main/jniLibs/
+
+# -----------------------------------------------------------------------
+# Shared ignore rules
+# -----------------------------------------------------------------------
+
+#= Build
+build/
+dist/
+package/
+result
+result-*
+target/
+
+#= Develop
+.direnv/
+.claude/
+.cargo/config.toml
+.idea/
+.zed/
+.vscode/
+*.swp
+*~
+
+#= Environment
+.env
+.env.*
+!.env.example
+
+#= OS
+.DS_Store
+Desktop.ini
+Thumbs.db
+
+# Agent workspaces
+.agents/workspaces/
