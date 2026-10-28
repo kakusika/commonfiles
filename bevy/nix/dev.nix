@@ -17,8 +17,13 @@ let
       "rust-analyzer"
     ])
   ];
+  rustTargetUpper = lib.toUpper (
+    builtins.replaceStrings [ "-" ] [ "_" ] pkgs.stdenv.hostPlatform.rust.rustcTarget
+  );
 in
 mkShell rec {
+  "CARGO_TARGET_${rustTargetUpper}_RUSTFLAGS" = "-C link-arg=-fuse-ld=lld";
+
   buildInputs = with pkgs; [
     #= Develop & Orchestration
     tools
@@ -91,6 +96,6 @@ mkShell rec {
   WINIT_UNIX_BACKEND = "wayland";
 
   shellHook = ''
-    echo "🦀🎮 Rust Bevy + Tomet"
+    echo "🦀🎮📚️ Rust Bevy + Tomet"
   '';
 }
