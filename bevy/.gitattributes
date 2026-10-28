@@ -1,0 +1,33 @@
+# Normalize all text files to LF line endings
+* text=auto eol=lf
+
+#= Linguist
+tmtroot/ linguist-documentation=true
+docs/ linguist-documentation=true
+*.md linguist-language=Markdown
+*.tmt linguist-language=Tomet
+
+# Written by `tomet export` from the documents under tmtroot/, not by hand.
+/AGENTS.md linguist-generated=true
+/README.md linguist-generated=true
+/CONTRIBUTING.md linguist-generated=true
+
+# Frozen test inputs
+tests/fixtures/ linguist-vendored=true
+
+#= Git LFS
+# 3D Assets
+*.glb filter=lfs diff=lfs merge=lfs -text
+*.gltf filter=lfs diff=lfs merge=lfs -text
+
+# Textures & Images
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.webp filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.ico filter=lfs diff=lfs merge=lfs -text
+
+# Fonts
+*.ttf filter=lfs diff=lfs merge=lfs -text
+*.woff2 filter=lfs diff=lfs merge=lfs -text
