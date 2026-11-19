@@ -6,18 +6,38 @@
 {
   projectRootFile = "flake.nix";
   programs = {
-    #= Nix
+    #--- Nix ---
     nixfmt.enable = true;
     statix.enable = true;
     deadnix.enable = true;
-
-    #= Shell
+    #--- Shell ---
     shfmt.enable = true;
     shellcheck.enable = true;
-
-    #= Main
+    #--- Rust ---
     rustfmt.enable = true;
-    taplo.enable = true;
+    taplo = {
+      enable = true;
+      settings = {
+        formatting = {
+          align_entries = true;
+          align_comments = true;
+          reorder_keys = false;
+        };
+        rule = [
+          {
+            keys = [
+              "dependencies"
+              "dev-dependencies"
+              "build-dependencies"
+              "workspace.dependencies"
+            ];
+            formatting = {
+              reorder_keys = true;
+            };
+          }
+        ];
+      };
+    };
     ktlint.enable = true;
   };
 
@@ -31,8 +51,8 @@
       tomet = {
         command = "${tomet}/bin/tomet";
         options = [
-          "fmt"
-          "--file"
+          "format"
+          "-i"
         ];
         includes = [ "*.tmt" ];
       };

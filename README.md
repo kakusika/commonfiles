@@ -1,4 +1,4 @@
-<!-- Generated from tmtroot/readme.tmt. Edit that, then `tomet export .`. -->
+<!-- Generated from .tomet/readme.tmt. Edit that, then `tomet export .`. -->
 
 # Common Files
 
@@ -8,15 +8,15 @@ Like `dotfiles`, the name is a convention: a repository of the common files of o
 
 ## What is here
 
-Everything that is handed out is under `base/`, laid out as it lands in a repository's root. Nothing under `base/` takes effect in this repository: `base/.github/workflows/` is not run here, and the files at this repository's own root (this readme, `tmtroot/`) are its own.
+Everything that is handed out is under `base/`, laid out as it lands in a repository's root. Nothing under `base/` takes effect in this repository: `base/.github/workflows/` is not run here.
 
-- the license texts the repositories carry.
-- the editor settings.
-- the `treefmt` setup the flakes use for `nix fmt`.
-- direnv: `use flake`, and `scripts/` on the `PATH`.
-- LF line endings, the Linguist settings, the documents `tomet export` writes marked generated, the Git LFS patterns. tomet keeps its own.
-- builds a repository's packages and sends them to Cachix.
-- builds the documents under `tmtroot/` with tomet-shelf and publishes them with GitHub Pages. Only a repository that publishes takes it.
+- **`base/LICENSE-APACHE`**: the license texts the repositories carry.
+- **`base/.editorconfig`**: the editor settings.
+- **`base/nix/formatter.nix`**: the `treefmt` setup the flakes use for `nix fmt`.
+- **`base/.envrc`**: direnv: `use flake`, and `scripts/` on the `PATH`.
+- **`base/.gitattributes`**: LF line endings, the Linguist settings, the documents `tomet export` writes marked generated, the Git LFS patterns. tomet keeps its own.
+- **`base/.github/workflows/nix-ci.yml`**: builds a repository's packages and sends them to Cachix.
+- **`base/.github/workflows/pages.yml`**: builds the repository's documents with tomet-shelf and publishes them with GitHub Pages. Only a repository that publishes takes it.
 
 ## Taking a file
 
@@ -55,5 +55,5 @@ What else a repository checks (tests, lints, generated files that must be fresh)
 
 ## Adding a file
 
-Only a file that is the same in every repository that has it belongs here, under `base/` at the path it should have in a repository. A file that differs by a name or a list (`.gitignore`, `default.config.tmt`) stays where it is.
+Only a file that is the same in every repository that has it belongs here, under `base/` at the path it should have in a repository. A file that differs by a name or a list (`.gitignore`, `vault.config.tmt`) stays where it is.
 

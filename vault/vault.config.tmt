@@ -1,0 +1,25 @@
+::kind(config)
+::id(config-vault)
+::macro(
+  generated_by: @comment[ Generated from $(1). Edit that, then `tomet export .`. ]
+)
+::format(
+  meta: (always_newline: true)
+  section: (
+    space_inside_brackets: true
+    blank_before: true
+    blank_after: true
+  )
+  list:        (multiline.style.content: "box")
+  code:        (fence.lines: "marked")
+  map:         (align_values: true, collapse_closing_parens: true)
+  declaration: (blank_after: true, blank_between: false)
+  element: (
+    table:   (adjust_width: auto, max_col_width: 50)
+    link:    (no_space: true, group_order: "[]()")
+    quote:   (always_newline: true)
+    callout: (style: (content: block))
+))
+::workspace(
+  ignore: ()
+)
